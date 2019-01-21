@@ -61,7 +61,7 @@ def change_to_live_server!
 end
 
 def set_default_server!
-  ENV['BASE_URL_API'] = 
+  ENV['BASE_URL_API'] =
     case ENV['MODE'].to_s.downcase
     when 'live'
       ENV['LIVE_BASE_URL_API']
@@ -150,7 +150,7 @@ end
 #   change_to_dev_server! if login_on_dev?
 #   data =
 #     post('auth/login', {
-#       phone: phone, 
+#       phone: phone,
 #       password: password
 #     }).store_api_token_and_return
 #   set_default_server!
@@ -189,7 +189,7 @@ end
 def details_msg(title = '', msg = '', new_line: true, color: :light_cyan)
   print "#{title.colorize(:blue)}: " if title.present?
   print msg.to_s.colorize(color)
-  print "\n" if new_line 
+  print "\n" if new_line
 end
 
 def info_msg(msg = '')
@@ -334,17 +334,17 @@ def continue_story
   print "\nPress any key to continue ...\n"
   STDIN.getch
   print "            \r" # extra space to overwrite in case next sentence is shorts
-end 
+end
 
 def reload!
   $VERBOSE = nil
   puts 'Reloading ...'
   # Main project directory.
-  root_dir = File.expand_path(File.dirname(File.dirname(__FILE__)))
-  
-  Dir.glob("#{root_dir}/**/*.rb").each do |f|
+  root_dir = File.expand_path(File.dirname(__FILE__))
+
+  Dir.glob("#{root_dir}/*.rb").each do |f|
     begin
-      load(f) rescue nil 
+      load(f) rescue nil
     rescue Exception => e
     end
   end

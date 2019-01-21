@@ -17,9 +17,28 @@ Array.class_eval do
   end
 end
 
+String.class_eval do
+  def parse_datetime
+    ['%d/%m/%Y %H:%M:%S', '%d/%m/%Y %H:%M', '%d/%m/%Y %H', '%d/%m/%Y'].each do |format_time|
+      tmp = Time.strptime(self, format_time) rescue nil
+      return tmp if tmp
+    end
+
+    raise ArgumentError, 'invalid strptime format'
+  end
+end
+
 Time.class_eval do
   def unix_time
     strftime('%s')
+  end
+
+  def beginning_of_day
+    Time.strptime(self.strftime('%d/%m/%Y'), '%d/%m/%Y') rescue nil
+  end
+
+  def end_of_day
+    Time.strptime("#{self.strftime('%d/%m/%Y')} 23:59:59", '%d/%m/%Y %H:%M:%S') rescue nil
   end
 end
 
@@ -47,3 +66,4 @@ Integer.class_eval do
     end
   end
 end
+
