@@ -78,7 +78,7 @@ class OkielaTasks
   end
 
   def process
-    # create_tasks(start_date: '19/1/2019', end_date: '01/03/2019', extra_option: {labels: %w(okiela medium)})
+    create_tasks(start_date: '30/07/2019', end_date: '30/08/2020', extra_option: {labels: %w(okiela medium)})
     # update_tasks(start_date: '19/1/2019', end_date: '01/03/2019', extra_option: {labels: %w(okiela medium)})
   end
 end

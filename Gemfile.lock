@@ -5,6 +5,7 @@ GEM
     benchmark-ips (2.7.2)
     coderay (1.1.2)
     colorize (0.8.1)
+    dotenv (2.7.5)
     hirb (0.7.3)
     hirb-unicode (0.0.5)
       hirb (~> 0.5)
@@ -32,10 +33,11 @@ DEPENDENCIES
   awesome_print
   benchmark-ips
   colorize
+  dotenv
   hirb-unicode
   httparty
   net-ssh-telnet
   pry
 
 BUNDLED WITH
-   1.16.4
+   1.17.2

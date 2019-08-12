@@ -5,12 +5,11 @@ module Environment
     'LIVE_BASE_URL_API' => 'https://api.trello.com/1/',
     'REQUEST_TIMEOUT' => '500',
     'DEBUG_MODE' => 'false',
-    'API_KEY' => '',
-    'API_TOKEN' => '',
     'GEMS_REQUIRES' => 'pry, httparty, colorize, awesome_print, net-ssh-telnet, benchmark-ips, hirb-unicode'
   }.each{ |k, v| ENV[k.upcase] ||= v }
 
   require_relative 'gem_requires.rb'
+  require 'dotenv/load'
   require 'open-uri'
   require 'fileutils'
   require 'pry'

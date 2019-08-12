@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 # The gems for development environment
 gem 'pry'
+gem 'dotenv'
 gem 'httparty'
 gem 'colorize'
 gem 'awesome_print'
